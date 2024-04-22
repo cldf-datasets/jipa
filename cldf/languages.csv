@@ -1,28 +1,28 @@
 ID,Name,Macroarea,Latitude,Longitude,Glottocode,ISO639P3code,Family,Glottolog_Name
 amarasi,Amarasi,Papunesia,-10.21751,123.96373,amar1273,aaz,Austronesian,Amarasi
-americanenglishsouthernmichigan,American English: Southern Michigan,Eurasia,,,nort3317,eng,Indo-European,North Central American English
+americanenglishsouthernmichigan,American English: Southern Michigan,Eurasia,53.0,-1.0,nort3317,eng,Indo-European,North Central American English
 amharic,Amharic,Africa,11.708182,39.543456,amha1245,amh,Afro-Asiatic,Amharic
 arabic,Arabic,Eurasia,27.9625,43.8525,stan1318,arb,Afro-Asiatic,Standard Arabic
 assamese,Assamese,Eurasia,26.0876,91.2932,assa1263,asm,Indo-European,Assamese
-australianenglish,Australian English,Eurasia,,,aust1314,eng,Indo-European,Australian English
-azerbaijani,Azerbaijani,Eurasia,40.9777,46.4737,nort2697,azj,Turkic,North Azerbaijani
+australianenglish,Australian English,Eurasia,53.0,-1.0,aust1314,eng,Indo-European,Australian English
+azerbaijani,Azerbaijani,Eurasia,40.97768,46.4737,nort2697,azj,Turkic,North Azerbaijani
 bardi,Bardi,Australia,-16.6274,122.906,bard1255,bcj,Nyulnyulan,Bardi
 basaa,Basaá,Africa,3.80765,10.4213,basa1284,bas,Atlantic-Congo,Basa (Cameroon)
-basquewesterlownavarresedialect,Basque (Wester Low Navarrese dialect),Eurasia,,,west1508,eus,Basque,Western Low Navarrese
+basquewesterlownavarresedialect,Basque (Wester Low Navarrese dialect),Eurasia,43.2787,-1.31622,west1508,eus,Basque,Western Low Navarrese
 bearnaisgascon,Béarnais (Gascon),Eurasia,44.1415,6.82979,occi1239,oci,Indo-European,Occitan
 belgianlimburgdialectofhamont,Belgian Limburg dialect of Hamont,Eurasia,51.015,5.87705,limb1263,lim,Indo-European,Limburgan
-belgianstandarddutch,Belgian Standard Dutch,,,,,nld,,
+belgianstandarddutch,Belgian Standard Dutch,Eurasia,52.0,5.0,dutc1256,nld,Indo-European,Dutch
 bemba,Bemba,Africa,-10.6122,29.2993,bemb1257,bem,Atlantic-Congo,Bemba (Zambia)
 bengalibangladeshistandard,Bengali (Bangladeshi Standard),Eurasia,24.0,90.0,beng1280,ben,Indo-European,Bengali
-brazilianportuguese,Brazilian Portuguese,Eurasia,,,braz1246,por,Indo-European,Brazilian Portuguese
+brazilianportuguese,Brazilian Portuguese,Eurasia,39.91,-8.1,braz1246,por,Indo-European,Brazilian Portuguese
 bretonoftheisleofgroix,Breton of the Isle of Groix,Eurasia,48.2452,-3.78934,bret1244,bre,Indo-European,Breton
-bretontregerdialect,Breton (Treger dialect),Eurasia,,,treg1244,bre,Indo-European,Tregorrois
+bretontregerdialect,Breton (Treger dialect),Eurasia,48.2452,-3.78934,treg1244,bre,Indo-European,Tregorrois
 britishenglishreceivedpronunciation,British English: Received Pronunciation,Eurasia,53.0,-1.0,stan1293,eng,Indo-European,English
-bruneimalay,Brunei Malay,Papunesia,,,brun1243,kxd,Austronesian,Brunei Malay
+bruneimalay,Brunei Malay,Papunesia,4.456045,114.429505,brun1243,kxd,Austronesian,Brunei Malay
 bukharantajik,Bukharan Tajik,Eurasia,38.8213,68.5549,taji1245,tgk,Indo-European,Tajik
 bulgarian,Bulgarian,Eurasia,43.3646,25.047,bulg1262,bul,Indo-European,Bulgarian
 burmese,Burmese,Eurasia,20.7926,93.9665,nucl1310,mya,Sino-Tibetan,Burmese
-castilianspanish,Castilian Spanish,Eurasia,,,cast1244,spa,Indo-European,Castilian
+castilianspanish,Castilian Spanish,Eurasia,40.4414,-1.11788,cast1244,spa,Indo-European,Castilian
 catalan,Catalan,Eurasia,41.453,1.569,stan1289,cat,Indo-European,Catalan
 centralarrernte,Central Arrernte,Australia,-23.3583,135.046,east2379,aer,Pama-Nyungan,Eastern Arrernte
 centralsama,Central Sama,Papunesia,7.004574,118.455978,cent2092,sml,Austronesian,Central Sama
@@ -35,12 +35,12 @@ cocosmalay,Cocos Malay,Papunesia,-12.193342,96.833679,coco1260,coa,Austronesian,
 croatian,Croatian,Eurasia,45.555,15.982,croa1245,hrv,Indo-European,Croatian Standard
 cypriotgreek,Cypriot Greek,Eurasia,34.924591,32.978113,cypr1249,ell,Indo-European,Cypriot Greek
 czech,Czech,Eurasia,49.873398,15.10437,czec1258,ces,Indo-European,Czech
-czechspokeninbohemia,Czech spoken in Bohemia,Eurasia,,,cent1953,ces,Indo-European,Central Bohemian
-czechspokeninmoravia,Czech spoken in Moravia,Eurasia,,,czec1259,ces,Indo-European,Czecho-Moravian
+czechspokeninbohemia,Czech spoken in Bohemia,Eurasia,49.873398,15.10437,cent1953,ces,Indo-European,Central Bohemian
+czechspokeninmoravia,Czech spoken in Moravia,Eurasia,49.873398,15.10437,czec1259,ces,Indo-European,Czecho-Moravian
 danish,Danish,Eurasia,54.8655,9.36284,dani1285,dan,Indo-European,Danish
 dariafghanpersianformal,Dari Afghan Persian Formal,Eurasia,31.0405,67.3593,dari1249,prs,Indo-European,Dari
 dariafghanpersianinformal,Dari Afghan Persian Informal,Eurasia,31.0405,67.3593,dari1249,prs,Indo-European,Dari
-dialectofmaastricht,Dialect of Maastricht,,,,,nld,,
+dialectofmaastricht,Dialect of Maastricht,Eurasia,52.0,5.0,dutc1256,nld,Indo-European,Dutch
 dutch,Dutch,Eurasia,52.0,5.0,dutc1256,nld,Indo-European,Dutch
 ega,Ega,Africa,5.56081,-5.41732,egaa1242,ega,Atlantic-Congo,Ega
 ersu,Ersu,Eurasia,29.2867,102.213,ersu1241,ers,Sino-Tibetan,Ersu
@@ -51,7 +51,7 @@ galician,Galician,Eurasia,42.2446,-7.5343,gali1258,glg,Indo-European,Galician
 gayo,Gayo,Papunesia,4.3733,97.3456,gayo1244,gay,Austronesian,Gayo
 gitksan,Gitksan,North America,55.09,-128.08,gitx1241,git,Tsimshian,Gitxsan
 goemai,Goemai,Africa,8.74455,9.72453,goem1240,ank,Afro-Asiatic,Goemai
-goizuetabasque,Goizueta Basque,Eurasia,,,guip1235,eus,Basque,Guipuzcoan
+goizuetabasque,Goizueta Basque,Eurasia,43.2787,-1.31622,guip1235,eus,Basque,Guipuzcoan
 greekthracexoraxaneromane,Greek Thrace Xoraxane Romane,Eurasia,42.67,21.17,balk1252,rmn,Indo-European,Balkan Romani
 hakkachinese,Hakka Chinese,Eurasia,25.0,116.0,hakk1236,hak,Sino-Tibetan,Hakka Chinese
 hanoivietnamese,Hanoi Vietnamese,Eurasia,20.681188,105.774071,viet1252,vie,Austroasiatic,Vietnamese
@@ -62,7 +62,7 @@ hungarian,Hungarian,Eurasia,46.9068585714,19.6555271429,hung1274,hun,Uralic,Hung
 ibibio,Ibibio,Africa,5.15279,7.86688,ibib1240,ibb,Atlantic-Congo,Ibibio
 igbo,Igbo,Africa,4.62705,7.23441,nucl1417,ibo,Atlantic-Congo,Igbo
 ikaigbo,Ika Igbo,Africa,6.36423,6.31058,ikaa1238,ikk,Atlantic-Congo,Ika
-indonesian,Indonesian,Papunesia,-7.33458,109.716,indo1316,ind,Austronesian,Indonesian
+indonesian,Indonesian,Papunesia,-7.33458,109.716,indo1316,ind,Austronesian,Standard Indonesian
 irish,Irish,Eurasia,53.2186,-7.61509,iris1253,gle,Indo-European,Irish
 istanbuljudeospanish,Istanbul Judeo-Spanish,Eurasia,41.205,28.6632,ladi1251,lad,Indo-European,Ladino
 isthmusjuchitanzapotec,Isthmus (Juchitán) Zapotec,North America,16.4548,-94.8444,isth1244,zai,Otomanguean,Isthmus Zapotec
@@ -73,11 +73,11 @@ japanese,Japanese,Eurasia,35.0,135.0,nucl1643,jpn,Japonic,Japanese
 jicarillaapache,Jicarilla Apache,North America,36.8079,-107.007,jica1244,apj,Athabaskan-Eyak-Tlingit,Jicarilla Apache
 kabiye,Kabiye,Africa,8.96816,0.495023,kabi1261,kbp,Atlantic-Congo,Kabiyé
 kalabariijo,Kalabari-Ijo,Africa,4.53194,6.69539,kala1381,ijn,Ijoid,Kalabari
-kedayan,Kedayan,Papunesia,,,keda1250,kxd,Austronesian,Kedayan
+kedayan,Kedayan,Papunesia,4.456045,114.429505,keda1250,kxd,Austronesian,Kedayan
 keo,Keo,Papunesia,-8.8704,121.256,keoo1238,xxk,Austronesian,Kéo
 kera,Kera,Africa,9.88165,15.1419,kera1255,ker,Afro-Asiatic,Kera
 khowar,Khowar,Eurasia,36.0,72.0,khow1242,khw,Indo-European,Khowar
-korean,Korean,Eurasia,37.5,128.0,kore1280,kor,Koreanic,Korean
+korean,Korean,Eurasia,37.54,126.98,kore1280,kor,Koreanic,Korean
 kumzari,Kumzari,Eurasia,26.1602,56.4202,kumz1235,zum,Indo-European,Kumzari
 kunama,Kunama,Africa,14.5879,37.5292,kuna1268,kun,,Kunama
 liverpoolenglish,Liverpool English,Eurasia,53.0,-1.0,stan1293,eng,Indo-European,English
@@ -97,11 +97,11 @@ mennoniteplaudietschcanadianoldcolony,Mennonite Plaudietsch (Canadian Old Colony
 mono,Mono,Africa,4.57915,19.8264,mono1270,mnh,Atlantic-Congo,Mono (Democratic Republic of Congo)
 monolakenorthernpaiute,Mono Lake Northern Paiute,North America,37.1935,-119.347,mono1275,mnr,Uto-Aztecan,Mono (USA)
 munji,Munji,Eurasia,35.9321,70.9404,munj1244,mnj,Indo-European,Munji
-murcianspanish,Murcian Spanish,Eurasia,,,murc1238,spa,Indo-European,Murcian
+murcianspanish,Murcian Spanish,Eurasia,40.4414,-1.11788,murc1238,spa,Indo-European,Murcian
 nara,Nara,Africa,15.3251,37.499,nara1262,nrb,,Nara
 nen,Nen,Papunesia,-8.62183,142.032,nenn1238,nqn,Yam,Nen
 nepali,Nepali,Eurasia,28.0,85.0,nepa1254,npi,Indo-European,Nepali
-newzealandenglish,New Zealand English,Eurasia,,,newz1240,eng,Indo-European,New Zealand English
+newzealandenglish,New Zealand English,Eurasia,53.0,-1.0,newz1240,eng,Indo-European,New Zealand English
 niuean,Niuean,Papunesia,-19.06,-169.86,niue1239,niu,Austronesian,Niuean
 nivacleschichaamlhavos,Nivacle Schichaam Lhavos,South America,-22.8557,-61.7606,niva1238,cag,Matacoan,Nivaclé
 northgerman,North German,Eurasia,48.649,12.4676,stan1295,deu,Indo-European,German
@@ -124,7 +124,7 @@ shiwilujebero,Shiwilu (Jebero),South America,-5.40317,-76.4103,jebe1250,jeb,Cahu
 sindhi,Sindhi,Eurasia,26.0,69.0,sind1272,snd,Indo-European,Sindhi
 slovak,Slovak,Eurasia,48.545705,18.78479,slov1269,slk,Indo-European,Slovak
 slovene,Slovene,Eurasia,46.2543,14.7766,slov1268,slv,Indo-European,Slovenian
-southeasternpashayi,Southeastern Pashayi,Eurasia,34.43099,70.30351,sout2672,psi,Indo-European,Southeast Pashayi
+southeasternpashayi,Southeastern Pashayi,Eurasia,34.66597,70.592042,sout2672,psi,Indo-European,Southeast Pashayi
 spokane,Spokane,North America,47.9087,-118.062,spok1245,spo,Salishan,Spokane
 standardaustriangerman,Standard Austrian German,Eurasia,47.9232,13.246,bava1246,bar,Indo-European,Bavarian
 standardchinesebeijing,Standard Chinese (Beijing),Eurasia,40.0209,116.228,mand1415,cmn,Sino-Tibetan,Mandarin Chinese
@@ -145,13 +145,13 @@ temne,Temne,Africa,8.90294,-12.3331,timn1235,tem,Atlantic-Congo,Timne
 tenaquichua,Tena Quichua,South America,-0.76271,-77.5404,tena1240,quw,Quechuan,Tena Lowland Quichua
 tera,Tera,Africa,11.0376,11.80953,tera1251,ttr,Afro-Asiatic,Tera
 thai,Thai,Eurasia,14.192,100.671,thai1261,tha,Tai-Kadai,Thai
-thedutchdialectofhasselt,The Dutch dialect of Hasselt,,,,,nld,,
-thedutchdialectofweert,The Dutch dialect of Weert,,,,,nld,,
-theflemishbrabantdialectoforsmaalgussenhoven,The Flemish-Brabant dialect of Orsmaal-Gussenhoven,Eurasia,,,brab1243,nld,Indo-European,Brabants
+thedutchdialectofhasselt,The Dutch dialect of Hasselt,Eurasia,52.0,5.0,dutc1256,nld,Indo-European,Dutch
+thedutchdialectofweert,The Dutch dialect of Weert,Eurasia,52.0,5.0,dutc1256,nld,Indo-European,Dutch
+theflemishbrabantdialectoforsmaalgussenhoven,The Flemish-Brabant dialect of Orsmaal-Gussenhoven,Eurasia,52.0,5.0,brab1243,nld,Indo-European,Brabants
 tilquiapanzapotec,Tilquiapan Zapotec,North America,16.8529,-96.6321,tilq1235,zts,Otomanguean,Tilquiapan Zapotec
 tukangbesi,Tukang Besi,Papunesia,-5.30994,123.578,tuka1248,khc,Austronesian,Tukang Besi North
 turkish,Turkish,Eurasia,39.8667,32.8667,nucl1301,tur,Turkic,Turkish
-tynesideenglish,Tyneside English,Eurasia,,,nort3300,eng,Indo-European,Northumberland English
+tynesideenglish,Tyneside English,Eurasia,53.0,-1.0,nort3300,eng,Indo-European,Northumberland English
 ukrainian,Ukrainian,Eurasia,49.796,29.945,ukra1253,ukr,Indo-European,Ukrainian
 uppersaxonchemnitzdialect,Upper Saxon (Chemnitz dialect,Eurasia,51.152,12.692,uppe1400,sxu,Indo-European,Central East Middle German
 uppersorbian,Upper Sorbian,Eurasia,51.2403,14.4098,uppe1395,hsb,Indo-European,Upper Sorbian

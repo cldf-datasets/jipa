@@ -8,8 +8,7 @@ Mavea
 mkv
 
 # Consonant Inventory:
-p̼(p̼, p), p(p, f, v, β), t, ɖ, k, m̼(m̼, m), m, n, ŋ, r(r, ɾ), v
-̼(v̼, ɸ, β, v, f), v(v, ɸ, β, f, ʋ), s, l, w, nː, lː, mː, rː
+p̼(p̼, p), p(p, f, v, β), t, ɖ, k, m̼(m̼, m), m, n, ŋ, r(r, ɾ), v̼(v̼, ɸ, β, v, f), v(v, ɸ, β, f, ʋ), s, l, w, nː, lː, mː, rː
 
 # Vowel Inventory:
  i(i, ɪ̯), e(e, ɪ̯), u, o(o, o̯), a

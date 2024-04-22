@@ -13,7 +13,7 @@ p, b, t, d, k, g, tʃ, dʒ, m, nː, n, ɲ, r, ɾ, s, z, ʃ(ʃ, h), ʒ, w, j, lː
 # Vowel Inventory:
 i(i, í, ì, ǐ), e(e, é, è, ě), a(a, á, à, ǎ), o(o, ó, ò, ǒ), u(u, ú, ù, ǔ),
 ḭ(ḭ, ḭ́, ḭ̀, ḭ̌), ḛ(ḛ, ḛ́, ḛ̀, ḛ̌), a̰(a̰, á̰, à̰, ǎ̰), o̰(o̰, ó̰, ò̰, ǒ̰), ṵ(ṵ, ṵ́, ṵ̀, ṵ̌),
-aʔ(aʔ, áʔ, àʔ) iʔ(iʔ, ìʔ, íʔ) 
+aʔ(aʔ, áʔ, àʔ), iʔ(iʔ, ìʔ, íʔ)
 
 # Phoneme inventory size:
 34

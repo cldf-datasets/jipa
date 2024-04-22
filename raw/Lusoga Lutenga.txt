@@ -10,7 +10,7 @@ xog
 # Consonant Inventory:
 p, b, t̪, d̪, t, d, c, ɟ, k, g, pʷ, t̪ʷ, d̪ʷ, tʷ, dʷ, kʷ, gʷ, pʲ, bʲ, d̪ʲ, tʲ, dʲ, 
 mp, mb, n̪t̪, n̪d̪, nt(nt, n̊t), nd, ɲc, ɲɟ, ŋk, ŋg, mpʷ, mbʷ, n̪d̪ʷ, ntʷ, ndʷ, ŋkʷ, ŋgʷ, 
-mpʲ, mbʲ, n̪d̪ʲ ntʲ, ndʲ, m, n̪, n, ŋ, mʷ, n̪ʷ, nʷ, ŋʷ, mʲ, n̪ʲ, nʲ, ɺ, ɺʷ, ɺʲ, 
+mpʲ, mbʲ, n̪d̪ʲ, ntʲ, ndʲ, m, n̪, n, ŋ, mʷ, n̪ʷ, nʷ, ŋʷ, mʲ, n̪ʲ, nʲ, ɺ, ɺʷ, ɺʲ,
 β, f, v, s, z(z, z̰), ʃ, ɣ, h, βʷ, fʷ, vʷ, sʷ, zʷ, βʲ, ɱf, ɱv, ns, nz, ɱvʷ, nsʷ, nzʷ, w, j
 
 # Vowel Inventory:

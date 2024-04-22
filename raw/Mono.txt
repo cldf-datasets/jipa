@@ -9,7 +9,7 @@ mnh
 
 # Consonant Inventory:
 p, b, t, d, tʃ, dʒ, k, g, kp, gb, ʔ, ɓ, ɗ, m, n, ɲ, f, v, s, z, ʃ, ʒ, h, mb, nd, ndʒ, ŋg, ŋgb, 
-w̆(w̆, v̆) r(r, rː), j, w, l
+w̆(w̆, v̆), r(r, rː), j, w, l
 
 # Vowel Inventory:
 i(i, í, ī, ì), e(e, é, ē, è), ɨ(ɨ, ɨ́, ɨ̄, ɨ̀), ə(ə, ə́, ə̄, ə̀), a(a, ɐ, á, ā, à, ɐ́, ɐ̄, ɐ̀, àː, áː), 

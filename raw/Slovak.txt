@@ -8,7 +8,7 @@ Slovak
 slk
 
 # Consonant Inventory:
-p, b, t, d, c, ɟ, k, g, m, n(m, n, ŋ)̘, ɲ, 
+p, b, t, d, c, ɟ, k, g, m, n(m, n, ŋ), ɲ,
 f, v(v, ʋ, ʊ̯, w), s, z, ʃ, ʒ, x(x, ɣ), ɦ, ts, dz, tʃ, dʒ, 
 r(r, ɾ, r̩), rː, j, l(l, l̩), ʎ, lː 
 

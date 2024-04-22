@@ -8,7 +8,7 @@ Setswana South Africa
 tsn
 
 # Consonant Inventory:
-p, pʰ, b, t, tʰ, d, k, kʰ, ʔ, ts, tsʰ, tɬ, tɬʰ, tʃ, tʃʰ dʒ, qχ, m(m, m̀), n, ɲ, ŋ, 
+p, pʰ, b, t, tʰ, d, k, kʰ, ʔ, ts, tsʰ, tɬ, tɬʰ, tʃ, tʃʰ, dʒ, qχ, m(m, m̀), n, ɲ, ŋ,
 r, f, s, ʃ, χ, h, l, j, w
 
 

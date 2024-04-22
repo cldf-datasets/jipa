@@ -9,7 +9,7 @@ hrv
 
 # Consonant Inventory:
 p, b, t, d, k, g, ts(ts, dz), tʃ, dʒ, tɕ, dʑ, m(m, ɱ), n(n, ŋ), ɲ,
- f(f, v), s, z, ʃ(ʃ, ɕ), ʒ(ʒ, ʑ), x(x, ɣ, h), r(r, r̩, ər, r̩̂, r̩̂ː), ʋ(ʋ, w), j, l ʎ
+ f(f, v), s, z, ʃ(ʃ, ɕ), ʒ(ʒ, ʑ), x(x, ɣ, h), r(r, r̩, ər, r̩̂, r̩̂ː), ʋ(ʋ, w), j, l, ʎ
 
 # Vowel Inventory:
 i(i, ǐ, î), e(e, ě, ê), a(a, ǎ, â), o(o, ǒ, ô), u(u, ǔ, û), iː(iː, ǐː, îː), eː(eː, ěː, êː),

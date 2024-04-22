@@ -1,0 +1,38 @@
+{
+    "creators": [
+        {
+            "name": "Louise Baird"
+        },
+        {
+            "name": "Nicholas Evans"
+        },
+        {
+            "name": "Simon J. Greenhill"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Tiago Tresoldi",
+            "type": "Other"
+        },
+        {
+            "name": "Johann-Mattis List",
+            "type": "Other"
+        },
+        {
+            "name": "Robert Forkel",
+            "type": "Other"
+        }
+    ],
+    "title": "CLDF dataset with phoneme inventories from the \"Journal of the IPA\", aggregated by Baird et al. (2021)",
+    "access_right": "open",
+    "keywords": [
+        "cldf:StructureDataset",
+        "linguistics"
+    ],
+    "upload_type": "dataset",
+    "description": "<p>Cite the source of the dataset as:</p>\n\n<blockquote>\n<p>Baird, L., Evans, N., &amp; Greenhill, S. J. (2021). Blowing in the wind: Using &#x27;North Wind and the Sun&#x27; texts to sample phoneme inventories. Journal of the International Phonetic Association, 1\u201342. doi:10.1017/s002510032000033x</p>\n</blockquote>",
+    "license": {
+        "id": "CC0-1.0"
+    }
+}

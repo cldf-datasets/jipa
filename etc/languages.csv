@@ -1,6 +1,6 @@
 ID,Name,ISO639P3code,Glottocode,Glottolog_Name,Source
 amarasi,Amarasi,aaz,amar1273,Amarasi,jipa_Edwards2016
-americanenglishsouthernmichigan,American English: Southern Michigan,eng,nort3317,North Central American English,jipa_Hillebrand2003
+americanenglishsouthernmichigan,American English: Southern Michigan,eng,nort3317,North Central American English,jipa_Hillenbrand2003
 amharic,Amharic,amh,amha1245,Amharic,jipa_Hayward1992
 arabic,Arabic,arb,stan1318,Standard Arabic,jipa_Thelwall1990
 assamese,Assamese,asm,assa1263,Assamese,jipa_Mahanta2012
@@ -11,7 +11,7 @@ basaa,Basaá,bas,basa1284,Basa (Cameroon),jipa_Makasso2015
 basquewesterlownavarresedialect,Basque (Wester Low Navarrese dialect),eus,west1508,Western Low Navarrese,jipa_Trask1978
 bearnaisgascon,Béarnais (Gascon),oci,occi1239,Occitan,jipa_Mooney2014
 belgianlimburgdialectofhamont,Belgian Limburg dialect of Hamont,lim,limb1263,Limburgan,jipa_Verhoeven2007
-belgianstandarddutch,Belgian Standard Dutch,nld,,,jipa_Verhoeven2005
+belgianstandarddutch,Belgian Standard Dutch,nld,dutc1256,,jipa_Verhoeven2005
 bemba,Bemba,bem,bemb1257,Bemba (Zambia),jipa_Hamann2015
 bengalibangladeshistandard,Bengali (Bangladeshi Standard),ben,beng1280,Bengali,jipa_Khan2010
 brazilianportuguese,Brazilian Portuguese,por,braz1246,Brazilian Portuguese,jipa_Barbosa2004
@@ -22,7 +22,7 @@ bruneimalay,Brunei Malay,kxd,brun1243,Brunei Malay,jipa_Deterding2016
 bukharantajik,Bukharan Tajik,tgk,taji1245,Tajik,jipa_Ido2014
 bulgarian,Bulgarian,bul,bulg1262,Bulgarian,jipa_Ternes1990
 burmese,Burmese,mya,nucl1310,Burmese,jipa_Watkins2001
-castilianspanish,Castilian Spanish,spa,cast1244,Castilian,jipa_MartnezCeeldrn2003
+castilianspanish,Castilian Spanish,spa,cast1244,Castilian,jipa_MartnezCeldrn2003
 catalan,Catalan,cat,stan1289,Catalan,jipa_Carbonell1992
 centralarrernte,Central Arrernte,aer,east2379,Eastern Arrernte,jipa_Breen2005
 centralsama,Central Sama,sml,cent2092,Central Sama,jipa_Pallesen2012
@@ -40,7 +40,7 @@ czechspokeninmoravia,Czech spoken in Moravia,ces,czec1259,Czecho-Moravian,jipa_i
 danish,Danish,dan,dani1285,Danish,jipa_Grnnum1998
 dariafghanpersianformal,Dari Afghan Persian Formal,prs,dari1249,Dari,jipa_Baker2016
 dariafghanpersianinformal,Dari Afghan Persian Informal,prs,dari1249,Dari,jipa_Baker2016
-dialectofmaastricht,Dialect of Maastricht,nld,,,jipa_Gussenhoven1999
+dialectofmaastricht,Dialect of Maastricht,nld,dutc1256,,jipa_Gussenhoven1999
 dutch,Dutch,nld,dutc1256,Dutch,jipa_Gussenhoven1992
 ega,Ega,ega,egaa1242,Ega,jipa_Connell2002
 ersu,Ersu,ers,ersu1241,Ersu,jipa_Chirkova2015
@@ -92,7 +92,7 @@ makasar,Makasar,mak,maka1311,Makasar,jipa_Tabain2016
 malayalamnamboodiridialect,Malayalam Namboodiri Dialect,mal,mala1464,Malayalam,jipa_Namboodiripad2016
 mambay,Mambay,mcs,mamb1294,Mambai,jipa_Anonby2006
 mapudungun,Mapudungun,arn,mapu1245,Mapudungun,jipa_Sadowsky2013
-mavea,Mavea,mkv,mafe1237,Mafea,jipa_Guerin2019
+mavea,Mavea,mkv,mafe1237,Mafea,jipa_Guerin2009
 mennoniteplaudietschcanadianoldcolony,Mennonite Plaudietsch (Canadian Old Colony),pdt,plau1238,Plautdietsch,jipa_Cox2013
 mono,Mono,mnh,mono1270,Mono (Democratic Republic of Congo),jipa_Olson2004
 monolakenorthernpaiute,Mono Lake Northern Paiute,mnr,mono1275,Mono (USA),jipa_Babel2012
@@ -145,8 +145,8 @@ temne,Temne,tem,timn1235,Timne,jipa_Kanu2010
 tenaquichua,Tena Quichua,quw,tena1240,Tena Lowland Quichua,jipa_ORourke2013
 tera,Tera,ttr,tera1251,Tera,jipa_Tench2007
 thai,Thai,tha,thai1261,Thai,jipa_Tingsabadh1993
-thedutchdialectofhasselt,The Dutch dialect of Hasselt,nld,,,jipa_Peters2006
-thedutchdialectofweert,The Dutch dialect of Weert,nld,,,jipa_Heijmans1998
+thedutchdialectofhasselt,The Dutch dialect of Hasselt,nld,dutc1256,,jipa_Peters2006
+thedutchdialectofweert,The Dutch dialect of Weert,nld,dutc1256,,jipa_Heijmans1998
 theflemishbrabantdialectoforsmaalgussenhoven,The Flemish-Brabant dialect of Orsmaal-Gussenhoven,nld,brab1243,Brabants,jipa_Peters2010
 tilquiapanzapotec,Tilquiapan Zapotec,zts,tilq1235,Tilquiapan Zapotec,jipa_Merrill2008
 tukangbesi,Tukang Besi,khc,tuka1248,Tukang Besi North,jipa_Donohue1994

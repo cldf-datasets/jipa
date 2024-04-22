@@ -12,7 +12,7 @@ http://paralleltext.info/data/cat-x-bible/41/001/
 
 # Consonant Inventory:
 p, b(b, β, bː, pː, w), t, d(d, ð), tʃ, dʒ, k, g(g, ɣ, gː, kː), m(m, mː, ɱ), n(n, nː),
- ɲ, ŋ, r, ɾ, f, v(v, b) s, z, ʃ(ʃ, tʃ), ʒ(ʒ, dʒ), j, w, l(l, ll), ʎ(ʎ, ʎː)
+ ɲ, ŋ, r, ɾ, f, v(v, b), s, z, ʃ(ʃ, tʃ), ʒ(ʒ, dʒ), j, w, l(l, ll), ʎ(ʎ, ʎː)
 
 # Vowel Inventory:
 i, e(e, ə), ɛ(ɛ, ə), a(a, ə), o(o, u), ɔ(ɔ, u), u
