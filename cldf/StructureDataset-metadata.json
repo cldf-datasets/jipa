@@ -22,7 +22,7 @@
         {
             "rdf:about": "https://github.com/cldf-datasets/jipa",
             "rdf:type": "prov:Entity",
-            "dc:created": "a1c4dcf",
+            "dc:created": "dace5f6",
             "dc:title": "Repository"
         },
         {
@@ -47,6 +47,7 @@
     "tables": [
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
+            "dc:description": "Rows in this table correspond to phonemes found in a particular inventory.",
             "dc:extent": 6660,
             "tableSchema": {
                 "columns": [
@@ -109,6 +110,7 @@
                         "name": "Contribution_ID"
                     },
                     {
+                        "dc:description": "Whether a segment is described as marginal.",
                         "datatype": "boolean",
                         "name": "Marginal"
                     },
@@ -132,7 +134,7 @@
                             "Parameter_ID"
                         ],
                         "reference": {
-                            "resource": "features.csv",
+                            "resource": "parameters.csv",
                             "columnReference": [
                                 "ID"
                             ]
@@ -169,6 +171,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
+            "dc:description": "Rows in this table correspond to CLTS BIPA sounds that phonemes found in the descriptions could be mapped to (in case CLTS_BIPA is non-empty) - or other sounds, identified by the grapheme used in the description.",
             "dc:extent": 956,
             "tableSchema": {
                 "columns": [
@@ -194,11 +197,13 @@
                         "name": "Description"
                     },
                     {
+                        "dc:description": "CLTS BIPA grapheme for the segment",
                         "datatype": "string",
                         "name": "CLTS_BIPA"
                     },
                     {
                         "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#cltsReference",
                         "name": "CLTS_Name"
                     }
                 ],
@@ -206,7 +211,7 @@
                     "ID"
                 ]
             },
-            "url": "features.csv"
+            "url": "parameters.csv"
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
@@ -290,6 +295,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ContributionTable",
+            "dc:description": "Rows in this table correspond to phoneme inventories as described in Illustrations of the IPA.",
             "dc:extent": 159,
             "tableSchema": {
                 "columns": [
@@ -336,14 +342,17 @@
                         "name": "Source"
                     },
                     {
+                        "dc:description": "A comment by the authors of the dataset on the description.",
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#comment",
                         "name": "Comment"
                     },
                     {
+                        "dc:description": "Data extracted by the authors of the dataset from the descriptions",
                         "datatype": "json",
                         "name": "Metadata"
                     },
                     {
+                        "dc:description": "Information on minimal pairs extracted by the authors of the dataset from the descriptions",
                         "datatype": "json",
                         "name": "Minimal_Pairs"
                     }

@@ -13,13 +13,15 @@ property | value
 [dc:identifier](http://purl.org/dc/terms/identifier) | https://doi.org/10.1017/S002510032000033x
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/publicdomain/zero/1.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/cldf-datasets/jipa
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/cldf-clts/clts/tree/v2.3.0">Catalog v2.3.0</a></li><li><a href="https://github.com/cldf-datasets/jipa/tree/a1c4dcf">cldf-datasets/jipa a1c4dcf</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v5.0">Glottolog v5.0</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/cldf-clts/clts/tree/v2.3.0">Catalog v2.3.0</a></li><li><a href="https://github.com/cldf-datasets/jipa/tree/dace5f6">cldf-datasets/jipa dace5f6</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v5.0">Glottolog v5.0</a></li></ol>
 [prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><strong>python</strong>: 3.10.12</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | jipa
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
 
 
 ## <a name="table-valuescsv"></a>Table [values.csv](./values.csv)
+
+Rows in this table correspond to phonemes found in a particular inventory.
 
 property | value
  --- | ---
@@ -33,18 +35,20 @@ Name/Property | Datatype | Description
  --- | --- | --- 
 [ID](http://cldf.clld.org/v1.0/terms.rdf#id) | `string`<br>Regex: `[a-zA-Z0-9_\-]+` | Primary key
 [Language_ID](http://cldf.clld.org/v1.0/terms.rdf#languageReference) | `string` | References [languages.csv::ID](#table-languagescsv)
-[Parameter_ID](http://cldf.clld.org/v1.0/terms.rdf#parameterReference) | `string` | References [features.csv::ID](#table-featurescsv)
+[Parameter_ID](http://cldf.clld.org/v1.0/terms.rdf#parameterReference) | `string` | References [parameters.csv::ID](#table-parameterscsv)
 [Value](http://cldf.clld.org/v1.0/terms.rdf#value) | `string` | 
 [Code_ID](http://cldf.clld.org/v1.0/terms.rdf#codeReference) | `string` | 
 [Comment](http://cldf.clld.org/v1.0/terms.rdf#comment) | `string` | 
 [Source](http://cldf.clld.org/v1.0/terms.rdf#source) | list of `string` (separated by `;`) | References [sources.bib::BibTeX-key](./sources.bib)
 [Contribution_ID](http://cldf.clld.org/v1.0/terms.rdf#contributionReference) | `string` | References [contributions.csv::ID](#table-contributionscsv)
-`Marginal` | `boolean` | 
+`Marginal` | `boolean` | Whether a segment is described as marginal.
 `Allophones` | list of `string` (separated by ` `) | 
 `InventorySize` | `integer` | 
 `Value_in_Source` | `string` | 
 
-## <a name="table-featurescsv"></a>Table [features.csv](./features.csv)
+## <a name="table-parameterscsv"></a>Table [parameters.csv](./parameters.csv)
+
+Rows in this table correspond to CLTS BIPA sounds that phonemes found in the descriptions could be mapped to (in case CLTS_BIPA is non-empty) - or other sounds, identified by the grapheme used in the description.
 
 property | value
  --- | ---
@@ -59,8 +63,8 @@ Name/Property | Datatype | Description
 [ID](http://cldf.clld.org/v1.0/terms.rdf#id) | `string`<br>Regex: `[a-zA-Z0-9_\-]+` | Primary key
 [Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | 
 [Description](http://cldf.clld.org/v1.0/terms.rdf#description) | `string` | 
-`CLTS_BIPA` | `string` | 
-`CLTS_Name` | `string` | 
+`CLTS_BIPA` | `string` | CLTS BIPA grapheme for the segment
+[CLTS_Name](http://cldf.clld.org/v1.0/terms.rdf#cltsReference) | `string` | 
 
 ## <a name="table-languagescsv"></a>Table [languages.csv](./languages.csv)
 
@@ -86,6 +90,8 @@ Name/Property | Datatype | Description
 
 ## <a name="table-contributionscsv"></a>Table [contributions.csv](./contributions.csv)
 
+Rows in this table correspond to phoneme inventories as described in Illustrations of the IPA.
+
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ContributionTable](http://cldf.clld.org/v1.0/terms.rdf#ContributionTable)
@@ -103,7 +109,7 @@ Name/Property | Datatype | Description
 [Citation](http://cldf.clld.org/v1.0/terms.rdf#citation) | `string` | 
 `URL` | `string` | 
 [Source](http://cldf.clld.org/v1.0/terms.rdf#source) | list of `string` (separated by `;`) | References [sources.bib::BibTeX-key](./sources.bib)
-[Comment](http://cldf.clld.org/v1.0/terms.rdf#comment) | `string` | 
-`Metadata` | `json` | 
-`Minimal_Pairs` | `json` | 
+[Comment](http://cldf.clld.org/v1.0/terms.rdf#comment) | `string` | A comment by the authors of the dataset on the description.
+`Metadata` | `json` | Data extracted by the authors of the dataset from the descriptions
+`Minimal_Pairs` | `json` | Information on minimal pairs extracted by the authors of the dataset from the descriptions
 

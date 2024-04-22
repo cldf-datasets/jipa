@@ -143,11 +143,7 @@ class Dataset(BaseDataset):
     id = "jipa"
 
     def cldf_specs(self):
-        return CLDFSpec(
-            module='StructureDataset',
-            dir=self.cldf_dir,
-            data_fnames={'ParameterTable': 'features.csv'}
-        )
+        return CLDFSpec(module='StructureDataset', dir=self.cldf_dir)
 
     def cmd_readme(self, args):
         return add_markdown_text(
@@ -229,11 +225,11 @@ Languages representd in the dataset color-coded by language family.
                     sound = clts.bipa[normalized]
                     par_id = compute_id(normalized)
                     if sound.type == 'unknownsound':
-                        bipa_grapheme = ''
-                        desc = ''
+                        bipa_grapheme = None
+                        clts_id = None
                     else:
                         bipa_grapheme = str(sound)
-                        desc = sound.name
+                        clts_id = sound.name.replace(' ', '_')
 
                     if par_id not in segment_ids:
                         segment_ids.add(par_id)
@@ -242,7 +238,7 @@ Languages representd in the dataset color-coded by language family.
                             "Name": normalized,
                             "Description": '',
                             "CLTS_BIPA": bipa_grapheme,
-                            "CLTS_Name": desc})
+                            "CLTS_Name": clts_id})
 
                     args.writer.objects['ValueTable'].append(
                         {
@@ -265,24 +261,65 @@ Languages representd in the dataset color-coded by language family.
     def _schema(self, cldf):
         cldf.add_columns(
             "ValueTable",
-            {"name": "Contribution_ID", "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#contributionReference"},
-            {"name": "Marginal", "datatype": "boolean"},
-            {"name": "Allophones", "separator": " ", "datatype": "string"},
-            {"name": "InventorySize", "datatype": "integer"},
-            {"name": "Value_in_Source", "datatype": "string"})
+            {
+                "name": "Contribution_ID",
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#contributionReference"},
+            {
+                "name": "Marginal",
+                "dc:description": "Whether a segment is described as marginal.",
+                "datatype": "boolean"},
+            {
+                "name": "Allophones",
+                "separator": " ",
+                "datatype": "string"},
+            {
+                "name": "InventorySize",
+                "datatype": "integer"},
+            {
+                "name": "Value_in_Source",
+                "datatype": "string"})
+        cldf['ValueTable'].common_props['dc:description'] = \
+            "Rows in this table correspond to phonemes found in a particular inventory."
 
-        cldf.add_columns(
+        t = cldf.add_component(
             'ParameterTable',
-            {'name': 'CLTS_BIPA', 'datatype': 'string'},
-            {'name': 'CLTS_Name', 'datatype': 'string'})
+            {
+                'name': 'CLTS_BIPA',
+                'dc:description': "CLTS BIPA grapheme for the segment",
+                'datatype': 'string'},
+            {
+                'name': 'CLTS_Name',
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#cltsReference",
+                'datatype': 'string'},
+        )
         cldf.remove_columns('ParameterTable', 'ColumnSpec')
+        t.common_props['dc:description'] = \
+            ("Rows in this table correspond to CLTS BIPA sounds that phonemes found in the "
+             "descriptions could be mapped to (in case CLTS_BIPA is non-empty) - or other "
+             "sounds, identified by the grapheme used in the description.")
         cldf.add_component("LanguageTable", "Family", "Glottolog_Name")
-        cldf.add_component(
+        t = cldf.add_component(
             "ContributionTable",
             "URL",
-            {"name": "Source", "separator": ";", "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source"},
-            {"name": "Comment", "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#comment"},
-
-            {"name": "Metadata", "datatype": "json"},
-            {"name": "Minimal_Pairs", "datatype": "json"},
+            {
+                "name": "Source",
+                "separator": ";",
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source"},
+            {
+                "name": "Comment",
+                "dc:description": "A comment by the authors of the dataset on the description.",
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#comment"},
+            {
+                "name": "Metadata",
+                "dc:description": "Data extracted by the authors of the dataset from the "
+                                  "descriptions",
+                "datatype": "json"},
+            {
+                "name": "Minimal_Pairs",
+                "dc:description": "Information on minimal pairs extracted by the authors of the "
+                                  "dataset from the descriptions",
+                "datatype": "json"},
         )
+        t.common_props['dc:description'] = \
+            ("Rows in this table correspond to phoneme inventories as described in Illustrations "
+             "of the IPA.")
