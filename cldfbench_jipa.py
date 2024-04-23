@@ -3,7 +3,9 @@ Generates a CLDF dataset for phoneme inventories from the "Journal of the IPA",
 aggregated by Baird et al. 2021.
 """
 import re
+import shlex
 import pathlib
+import subprocess
 import collections
 import unicodedata
 
@@ -16,6 +18,20 @@ from clldutils.misc import slug
 from clldutils.markup import add_markdown_text
 from cldfcatalog import Catalog
 from clld.lib.bibtex import unescape
+
+CLTS_RELEASE = "v2.3.0"  # The CLTS release against which we compile the dataset.
+
+
+def graph(limit=100):
+    SQL = """\
+SELECT p.CLTS_BIPA, count(v.cldf_id) AS c 
+FROM ParameterTable AS p, ValueTable AS v 
+WHERE v.cldf_parameterreference = p.cldf_id 
+GROUP BY v.cldf_parameterreference ORDER BY c DESC LIMIT {}""".format(limit)
+    p1 = subprocess.Popen(["sqlite3", "jipa.sqlite", SQL], stdout=subprocess.PIPE)
+    p2 = subprocess.Popen(["termgraph", "--delim", "|"], stdin=p1.stdout, stdout=subprocess.PIPE)
+    p1.stdout.close()
+    return SQL, p2.communicate()[0].decode('utf8')
 
 
 def compute_id(text):
@@ -34,17 +50,22 @@ def normalize_grapheme(text):
 
 
 def iter_data(p):
-    sections = {}
+    """
+    Reads the raw/*.txt files, yielding (section, lines) pairs.
+    """
+    sections = {}  # We keep track of sections we've seen before in order to deal with duplicates.
     section, lines = None, []
     for line in p.read_text(encoding='utf-8-sig').split('\n'):
         line = line.strip()
-        if line.startswith("#"):
+        if line.startswith("#"):  # a section
             if section and lines:
                 if section in sections:
+                    # If we have seen the section before, make sure content is identical.
                     assert lines == sections[section], '{}: {}'.format(p, section)
                 sections[section] = lines
                 yield section, lines
                 lines = []
+            # Store a normalized version of the new section title.
             section = line[1:].strip().lower()
             if section.endswith(':'):
                 section = section[:-1].strip()
@@ -55,6 +76,7 @@ def iter_data(p):
         else:
             lines.append(line)
     if section and lines:
+        # Nen.txt has a duplicate "Reference" section with differing content. We ignore this.
         if not (p.stem == 'Nen' and section == 'reference'):
             if section in sections:
                 assert lines == sections[section], '{}: {}'.format(p, section)
@@ -66,33 +88,29 @@ def iter_phonemes(t, ignore_allophones=False):
     Splits a list of phonemes as provided in the source.
 
     We need to split by commas, provided they are not within parentheses (used to
-    list allophones). This solution uses a negative-lookahead in regex.
+    list allophones).
     """
     # Replace double commas introduced by joining lines when reading the raw data.
     t = re.sub(',\s*,', ',', t).replace(',,', ',')
-    # Add a couple of missing commans, separating phonemes.
+    # A bit of cleaning:
     t = t.replace('\u032al', 'l̪').replace('\u2019', '\u02bc')
 
     in_allophones = False
     phoneme, allophone, allophones, marginal = '', '', [], False
     for i, c in enumerate(t):
-        if c in [',', ';']:
+        if c in [',', ';']:  # There's one case where semicolon is used to separate phonemes.
             if in_allophones:  # a new allophone starts.
-                if allophone.strip():
-                    allophones.append(allophone.strip())
-                    allophone = ''
-                elif not ignore_allophones:
-                    raise ValueError('unexpected separator in allophones: {}'.format(t))
+                assert allophone.strip() or ignore_allophones
+                allophones.append(allophone.strip())
+                allophone = ''
             else:  # a new phoneme starts.
-                if phoneme.strip():
-                    yield phoneme.strip(), allophones, marginal
-                    phoneme, allophone, allophones, marginal = '', '', [], False
-                else:
-                    raise ValueError('unexpected separator in phonemes: {}; {}'.format(t, t[i-5:i+5]))
+                assert phoneme.strip()
+                yield phoneme.strip(), allophones, marginal
+                phoneme, allophone, allophones, marginal = '', '', [], False
         elif c == '(':
-            if phoneme.strip():
+            if phoneme.strip():  # If we've already found a phoneme, it's the list of allophones.
                 in_allophones = True
-            else:
+            else:  # Otherwise, braces mark a single phoneme as marginal.
                 marginal = True
         elif c == ')':
             if in_allophones:
@@ -146,16 +164,31 @@ class Dataset(BaseDataset):
         return CLDFSpec(module='StructureDataset', dir=self.cldf_dir)
 
     def cmd_readme(self, args):
+        sql, chart = graph()
         return add_markdown_text(
             super().cmd_readme(args), """
-Languages representd in the dataset color-coded by language family.
+### Coverage
 
-![](map.svg)""", section='Description')
+Languages represented in the dataset color-coded by language family.
+
+![](map.svg)
+
+The long tail of phonemes attested in inventories in this dataset can be computed via 
+[CLDF SQL](https://github.com/cldf/cldf/blob/master/extensions/sql.md):
+
+```sql
+{}
+```
+
+```
+{}…
+```
+""".format(sql, chart), section='Description')
 
     def cmd_makecldf(self, args):
         self._schema(args.writer.cldf)
         glottolog = args.glottolog.api
-        with Catalog.from_config('clts', tag='v2.3.0') as cat:
+        with Catalog.from_config('clts', tag=CLTS_RELEASE) as cat:
             args.writer.cldf.add_provenance(wasDerivedFrom=[cat.json_ld()])
             clts = CLTS(cat.dir)
 
@@ -168,8 +201,10 @@ Languages representd in the dataset color-coded by language family.
                     row.update({
                         "Family": lang.family.name if lang.family else '',
                         "Glottocode": row["Glottocode"],
-                        "Latitude": lang.latitude or lang.parent.latitude or lang.parent.parent.latitude,
-                        "Longitude": lang.longitude or lang.parent.longitude or lang.parent.parent.longitude,
+                        "Latitude": lang.latitude or
+                                    lang.parent.latitude or lang.parent.parent.latitude,
+                        "Longitude": lang.longitude or
+                                     lang.parent.longitude or lang.parent.parent.longitude,
                         "Macroarea": lang.macroareas[0].name if lang.macroareas else None,
                         "Glottolog_Name": lang.name,
                     })
@@ -178,46 +213,45 @@ Languages representd in the dataset color-coded by language family.
             source_map = {
                 lang["ID"]: lang["Source"] for lang in args.writer.objects['LanguageTable']}
 
-            segment_ids = set()
+            segment_ids = set()  # We keep track of segments we've already seen.
             counter = 1
             for filename in sorted(self.raw_dir.glob("*.txt"), key=lambda f: f.name):
-                contents = read_raw_source(filename)
-                lang_key = slug(contents["language_name"])
-
+                md = read_raw_source(filename)
+                lang_key = slug(md["language_name"])
+                src = args.writer.cldf.sources[source_map[lang_key]]
                 args.writer.objects['ContributionTable'].append(dict(
                     ID=lang_key,
-                    Name='Illustrations of the IPA: {}'.format(contents["language_name"]),
+                    Name='Illustrations of the IPA: {}'.format(md["language_name"]),
                     Source=[source_map[lang_key]],
-                    Contributor=unescape(args.writer.cldf.sources[source_map[lang_key]]['Author']),
-                    Citation=args.writer.cldf.sources[source_map[lang_key]].text(),
-                    Comment=contents['metadata'].pop('notes', None),
-                    URL='https://doi.org/{}'.format(args.writer.cldf.sources[source_map[lang_key]]['Doi']),
-                    Metadata={k: v for k, v in contents['metadata'].items() if 'minimal pair' not in k},
-                    Minimal_Pairs={k: v for k, v in contents['metadata'].items() if 'minimal pair' in k},
+                    Contributor=unescape(src['Author']),
+                    Citation=src.text(),
+                    Comment=md['metadata'].pop('notes', None),
+                    URL='https://doi.org/{}'.format(src['Doi']),
+                    Metadata={k: v for k, v in md['metadata'].items() if 'minimal pair' not in k},
+                    Minimal_Pairs={k: v for k, v in md['metadata'].items() if 'minimal pair' in k},
                 ))
 
-                ps = ','.join([contents["consonants"], contents["vowels"]])
-                segments = list(iter_phonemes(ps))
-
-                if contents['language_name'] not in [
+                segments = list(iter_phonemes(md["consonants"])) + list(iter_phonemes(md["vowels"]))
+                # We compare phonemes we read from the data with stated inventory size. For some
+                # languages, these do not match - often explained by errors in the source.
+                if md['language_name'] not in [
                     'Central Sama',
                     'Dari Afghan Persian Informal',  # ?
                     'Ibibio',  # ?
                     'Jicarilla Apache',  # ?
                     'Lower Xumi',  # ?
                     'Luanyjang Dinka',  # tones, but ...
-                    'Lusoga Lutenga',  # ?
-                    'Mono',  # Errors
                     'Nepali',  # ?
                     'Nivacle Schichaam Lhavos',  # Errors
                     'Setswana South Africa',  # Errors
                     'Upper Sorbian',  # ?
                 ]:
                     num_segments = len(segments)
-                    if 'toneme inventory' in contents['metadata']:
+                    if 'toneme inventory' in md['metadata']:
+                        # Typically, tonemes are taken into account in the inventory size.
                         num_segments += len(list(iter_phonemes(
-                            contents['metadata']['toneme inventory'], ignore_allophones=True)))
-                    assert int(contents['inventory']) in [num_segments, len(segments)], filename
+                            md['metadata']['toneme inventory'], ignore_allophones=True)))
+                    assert int(md['inventory']) in [num_segments, len(segments)], filename
 
                 for segment, allophones, marginal in segments:
                     normalized = normalize_grapheme(segment)
@@ -253,7 +287,7 @@ Languages representd in the dataset color-coded by language family.
                                 '({})'.format(segment) if marginal else segment),
                             "Value": normalized,
                             "Source": [source_map[lang_key]],
-                            "InventorySize": contents['inventory']
+                            "InventorySize": md['inventory']
                         }
                     )
                     counter += 1
